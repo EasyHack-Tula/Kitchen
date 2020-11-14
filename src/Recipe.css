@@ -15,7 +15,7 @@
 }
 .nameBox
 {
-    padding-top: 170px;
+    padding-top: 12%;
     width: fit-content;
 }
 .NameText
@@ -31,8 +31,43 @@
 }
 .TextBox
 {
-    margin-top: 40px;
+    margin-top: 4%;
     font: normal normal 500 15px Montserrat;
-    color: #4b4b4b;
+    color: #797979;
     width: 65%;
+}
+.IngredientsBox
+{
+    margin-top: 65px;
+}
+.ingr
+{
+    font: normal normal 600 25px Montserrat;
+}
+.IngrGrid
+{
+    font: normal normal 500 18px Montserrat;
+    color: #797979;
+    margin-top: 4%;
+    overflow: hidden;
+}
+.Bold
+{
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nPr
+{
+    display: inline-block;
+}
+.Button
+{
+    margin-top: 8%;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    font: normal normal 600 28px Montserrat;
 }

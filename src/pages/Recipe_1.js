@@ -3,14 +3,28 @@ import '../Recipe.css'
 import React from 'react';
 import Image1 from '../image/rec1_1.jpg'
 import CustomizedSteppers from "../Scripts/CustomizedSteppers";
+import { Grid } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core";
+
 
 var ImageBack1 = {
     backgroundImage: "url(" + Image1 + ")"
-}
+};
 
+const  useStyle = makeStyles((theme)  => ({
+    container: {
+        display: "grid",
+        gridTemplateColumns: "repeat(12, 1fr)",
+        gridGap: theme.spacing(2),
+        maxWidth: "70%" }
+}));
 
 function Recipe_1() {
+    const classes = useStyle();
+
     return (
+
+
         <div>
             <div className="RecImg" style={ImageBack1}></div>
             <div className="Container">
@@ -23,14 +37,36 @@ function Recipe_1() {
 
                     Nulla et rutrum augue. Donec vel augue ante. Nunc posuere quam sit amet consequat hendrerit. Proin a metus vitae elit condimentum ornare vel id ligula. Nullam mollis libero ut fermentum ullamcorper. Quisque sed odio augue. Etiam laoreet felis eu vehicula blandit.
                 </div>
-                <div class="IngerdientsBox">
+                <div class="IngredientsBox">
                     <div className="ingr">Ингредиенты</div>
+                    <div className="IngrGrid">
+                        <div className={classes.container}>
+                            <div style={{ gridColumnEnd: "span 6" }}>
+                                <div className="Bold"> • </div><div className="nPr"> Хлеб</div>
+                            </div>
+                            <div style={{ gridColumnEnd: "span 6" }}>
+                                <div className="Bold"> • </div><div className="nPr"> Хлеб</div>
+                            </div>
+                            <div style={{ gridColumnEnd: "span 6" }}>
+                                <div className="Bold"> • </div><div className="nPr"> Хлеб</div>
+                            </div>
+                            <div style={{ gridColumnEnd: "span 6" }}>
+                                <div className="Bold"> • </div><div className="nPr"> Хлеб</div>
+                            </div>
+                            <div style={{ gridColumnEnd: "span 6" }}>
+                                <div className="Bold"> • </div><div className="nPr"> Хлеб</div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
+
+                <div className="Button">Старт</div>
+
             </div>
         </div>
-    )
-};
-
+    );
+}
 
 export default Recipe_1
