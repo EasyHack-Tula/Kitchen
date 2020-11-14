@@ -25,7 +25,7 @@ function Recipe_1() {
                 </div>
                 <div class="IngerdientsBox">
                     <div className="ingr">Ингредиенты</div>
-                    
+
                 </div>
             </div>
         </div>
