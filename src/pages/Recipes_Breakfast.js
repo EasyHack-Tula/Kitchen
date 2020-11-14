@@ -1,5 +1,4 @@
-import '../Menu.css';
-import '../Header.css';
+import '../App.css';
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper} from "@material-ui/core"
@@ -17,6 +16,8 @@ import {
 } from "react-router-dom";
 
 import Recipe_1 from "./Recipe_1";
+import Main from "../Main";
+import CheckboxesGroup from "../Scripts/CheckBoxes";
 
 
 
@@ -40,18 +41,16 @@ var imageItem3 = {
 function Recipes_Breakfast() {
 
     return (
+        <Router>
         <div>
-            <div>
+            <div className="content">
                 <h1 className="headerText">
                     Книга Вкуса
                 </h1>
-            </div>
-            <div className="content">
-
                 <div className="ItemCon">
-                    <Grid container spacing={9}>
-                        <Grid item sm={4}>
-                            <a href='/pages/Recipe_1'>
+                    <Grid container spacing={8}>
+                        <Grid item xs={4} sm={3}>
+                            <a href="/pages/Recipe_1">
                             <div className="ItemCircle" style={imageItem1}>
                                 <div className="ItemName">
                                     Завтрак
@@ -59,23 +58,23 @@ function Recipes_Breakfast() {
                             </div>
                             </a>
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} sm={3}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} sm={3}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} sm={3}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} sm={3}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} sm={3}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
@@ -84,6 +83,7 @@ function Recipes_Breakfast() {
 
             </div>
         </div>
+        </Router>
     )};
 
 export default Recipes_Breakfast;

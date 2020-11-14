@@ -1,4 +1,4 @@
-import './Menu.css';
+import './App.css';
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper} from "@material-ui/core"

@@ -1,10 +1,9 @@
-
-import '../Recipe.css'
 import React from 'react';
-import Image1 from '../image/rec1_1.jpg'
+import CheckboxesGroup from "../Scripts/CheckBoxes";
 import CustomizedSteppers from "../Scripts/CustomizedSteppers";
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core";
+
 
 
 var ImageBack1 = {
@@ -23,6 +22,7 @@ function Recipe_1() {
     const classes = useStyle();
 
     return (
+
 
 
         <div>
