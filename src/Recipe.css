@@ -1,0 +1,8 @@
+.RecImg
+{
+    height: 100vh;
+    width: 40vh;
+    background-image: url("./image/rec1_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

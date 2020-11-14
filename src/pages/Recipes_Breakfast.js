@@ -1,4 +1,5 @@
-import '../App.css';
+import '../Menu.css';
+import '../Header.css';
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper} from "@material-ui/core"
@@ -40,13 +41,16 @@ function Recipes_Breakfast() {
 
     return (
         <div>
-            <div className="content">
+            <div>
                 <h1 className="headerText">
                     Книга Вкуса
                 </h1>
+            </div>
+            <div className="content">
+
                 <div className="ItemCon">
-                    <Grid container spacing={8}>
-                        <Grid item xs={4} sm={3}>
+                    <Grid container spacing={9}>
+                        <Grid item sm={4}>
                             <a href='/pages/Recipe_1'>
                             <div className="ItemCircle" style={imageItem1}>
                                 <div className="ItemName">
@@ -55,23 +59,23 @@ function Recipes_Breakfast() {
                             </div>
                             </a>
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item sm={4}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item sm={4}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
