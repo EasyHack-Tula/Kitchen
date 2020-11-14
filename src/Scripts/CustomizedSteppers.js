@@ -17,18 +17,21 @@ import CheckBoxes from "./CheckBoxes";
 
 const ColorlibConnector = withStyles({
     alternativeLabel: {
-        top: 22
+        top: 22,
+        position:"absolute",
     },
     active: {
         "& $line": {
             backgroundImage:
-                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
+                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+
         }
     },
     completed: {
         "& $line": {
             backgroundImage:
-                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
+                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+
         }
     },
     line: {
@@ -36,7 +39,7 @@ const ColorlibConnector = withStyles({
         border: 0,
         backgroundColor: "#eaeaf0",
         borderRadius: 1
-    }
+    },
 })(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
@@ -101,7 +104,7 @@ ColorlibStepIcon.propTypes = {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "100%"
+        width: "100%",
     },
     button: {
         marginRight: theme.spacing(1)
@@ -159,41 +162,7 @@ export default function CustomizedSteppers() {
                     </Step>
                 ))}
             </Stepper>
-            <div>
-                {activeStep === steps.length ? (
-                    <div>
-                        <Typography className={classes.instructions}>
-                            All steps completed - you&apos;re finished
-                        </Typography>
-                        <Button onClick={handleReset} className={classes.button}>
-                            Reset
-                        </Button>
-                    </div>
-                ) : (
-                    <div>
-                        <Typography className={classes.instructions}>
-                            {getStepContent(activeStep)}
-                        </Typography>
-                        <div>
-                            <Button
-                                disabled={activeStep === 0}
-                                onClick={handleBack}
-                                className={classes.button}
-                            >
-                                Back
-                            </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={handleNext}
-                                className={classes.button}
-                            >
-                                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                            </Button>
-                        </div>
-                    </div>
-                )}
-            </div>
+
         </div>
     );
 }

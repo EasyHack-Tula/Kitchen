@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image1 from '../image/rec1_1.jpg'
-
+import { motion, AnimatePresence } from "framer-motion"
+import ReactTimeout from 'react-timeout'
 import '../Recipe.css'
+import Steppers from '../Scripts/CustomizedSteppers'
 
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core";
@@ -19,17 +21,33 @@ const  useStyle = makeStyles((theme)  => ({
         display: "grid",
         gridTemplateColumns: "repeat(12, 1fr)",
         gridGap: theme.spacing(2),
-        maxWidth: "70%" }
+        maxWidth: "70%" },
+
+
 }));
 
+
 function Recipe_2() {
+
+    const [isShow, setIsShow] = useState(false);
+
+    const defaultState = {
+        scale: 0.7,
+        opacity: 0
+
+    };
+
+
     const classes = useStyle();
+
+
 
     return (
 
 
 
         <div>
+            <div className="Pr"><AnimatePresence>{isShow && (<motion.div  className="StepperBox" initial={defaultState} exit={defaultState} animate={{scale: 1, opacity: 1 }}><Steppers/></motion.div>)}</AnimatePresence></div>
             <div className="RecImg" style={ImageBack1}></div>
             <div className="Container">
                 <div className='nameBox'>
@@ -66,12 +84,16 @@ function Recipe_2() {
 
                 </div>
 
-                <div className="Button">Старт</div>
+                <div className="Button" onClick={() => {setIsShow(true); setTimeout(() => {setIsShow(false);},1500)}}> Старт </div>
+
 
             </div>
+
         </div>
     );
 
 }
+
+
 
 export default Recipe_2
