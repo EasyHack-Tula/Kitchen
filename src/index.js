@@ -12,6 +12,7 @@ import Recipes_Dinner from "./pages/Recipes_Dinner";
 import CustomizedSteppers from "./Scripts/CustomizedSteppers";
 import CheckboxesGroup from "./Scripts/CheckBoxes";
 import Recipe_1 from "./pages/Recipe_1";
+import Recipe_2 from "./pages/Recipe_2";
 
 ReactDOM.render(
     <Router>
@@ -21,8 +22,8 @@ ReactDOM.render(
                 <Route path="/pages/Recipes_Breakfast" component={Recipes_Breakfast}/>
                 <Route path="/pages/Recipes_Launch" component={Recipes_Launch}/>
                 <Route path="/pages/Recipes_Dinner" component={Recipes_Dinner}/>
-                <Route path="/pages/Recipes_Breakfast" component={Recipes_Breakfast}/>
                 <Route path="/pages/Recipe_1" component={Recipe_1}/>
+                <Route path="/pages/Recipe_2" component={Recipe_2}/>
             </Switch>
         </div>
     </Router>,

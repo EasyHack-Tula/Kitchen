@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .RecImg
 {
     height: 100vh;
@@ -70,4 +75,36 @@
     justify-content: center;
     align-items: center;
     font: normal normal 600 28px Montserrat;
+}
+
+.checkbox
+{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+.checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.checkbox+label::before {
+    content: '';
+    display: inline-block;
+    align-items: center;
+    height: 21px;
+    width: 21px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-image: url("./image/check-circle.svg");
+    background-repeat: no-repeat;
+    margin-right: 12px;
+    background-position: center center;
+}
+.checkbox:checked+label::before {
+    height: 21px;
+    width: 21px;
+    background-image: url("./image/check-circle-fill.svg");
+    background-repeat: no-repeat;
 }

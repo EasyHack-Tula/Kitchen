@@ -1,6 +1,7 @@
 import React from 'react';
 import Image1 from '../image/rec1_1.jpg'
 
+
 import '../Recipe.css'
 
 import { Grid } from "@material-ui/core"
@@ -66,7 +67,7 @@ function Recipe_1() {
 
                 </div>
 
-                <div className="Button">Старт</div>
+                <a href='./Recipe_2'><div className="Button">Старт</div></a>
 
             </div>
         </div>

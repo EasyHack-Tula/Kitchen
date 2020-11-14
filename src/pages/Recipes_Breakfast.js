@@ -43,13 +43,14 @@ function Recipes_Breakfast() {
     return (
         <Router>
         <div>
+            <h1 className="headerText">
+                Книга Вкуса
+            </h1>
             <div className="content">
-                <h1 className="headerText">
-                    Книга Вкуса
-                </h1>
+
                 <div className="ItemCon">
                     <Grid container spacing={8}>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <a href="/pages/Recipe_1">
                             <div className="ItemCircle" style={imageItem1}>
                                 <div className="ItemName">
@@ -58,23 +59,23 @@ function Recipes_Breakfast() {
                             </div>
                             </a>
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <div className="ItemCircle" style={imageItem2}><div className="ItemName">Обед</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
-                        <Grid item xs={4} sm={3}>
+                        <Grid item xs={12} sm={4}>
                             <div className="ItemCircle" style={imageItem3}><div className="ItemName">Ужин</div></div>
 
                         </Grid>
