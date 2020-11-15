@@ -12,7 +12,15 @@ a{
   justify-content: center;
 }
 
-
+.headerText{
+  font-family: "Montserrat SemiBold";
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 1.6px;
+  color: black;
+  position: absolute;
+  margin-left: 21%;
+}
 
 .ItemCon
 {
@@ -65,4 +73,16 @@ a{
   color: #000000;
   opacity: 1;
   padding-top: 110%;
+}
+.Welcome
+{
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  font: normal normal 600 72px Montserrat;
+  align-items: center;
+  justify-content: center;
 }

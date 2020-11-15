@@ -1,6 +1,9 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper} from "@material-ui/core"
+import { motion, AnimatePresence } from "framer-motion"
+
+import './Menu.css'
 
 import Breakfast from './image/Breakfast.jpg'
 import Lunch from './image/Lunch.jpg'
@@ -34,6 +37,7 @@ var imageItem3 = {
 function Main() {
     return (
         <div>
+            <motion.div animate={{y: -1000, opacity:0}} transition={{duration: 3}} className="Welcome"> Добро пожаловать</motion.div>
             <div>
                 <h1 className="headerText">
                 Книга Вкуса

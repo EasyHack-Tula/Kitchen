@@ -114,13 +114,14 @@ a{
 
 .StepperBox
 {
+    padding-top: 15px ;
     align-items: center;
     display: flex;
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 150px;
     background-color:#fff ;
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 15px 15px 50px gray;
 }
 

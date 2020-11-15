@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
+import Check from "@material-ui/icons/Check"
 import SettingsIcon from "@material-ui/icons/Settings";
 //import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import VideoLabelIcon from "@material-ui/icons/VideoLabel";
@@ -15,23 +16,96 @@ import Typography from "@material-ui/core/Typography";
 import CheckBoxes from "./CheckBoxes";
 
 
+const QontoConnector = withStyles({
+    alternativeLabel: {
+        top: 10,
+        left: "calc(-50% + 16px)",
+        right: "calc(50% + 16px)"
+    },
+    active: {
+        "& $line": {
+            borderColor: "black"
+        }
+    },
+    completed: {
+        "& $line": {
+            borderColor: "black"
+        }
+    },
+    line: {
+        borderColor: "#eaeaf0",
+        borderTopWidth: 3,
+        borderRadius: 1
+    }
+})(StepConnector);
+
+const useQontoStepIconStyles = makeStyles({
+    root: {
+        color: "#eaeaf0",
+        display: "flex",
+        height: 22,
+        alignItems: "center"
+    },
+    active: {
+        color: "black"
+    },
+    circle: {
+        width: 16,
+        height: 16,
+        borderRadius: "50%",
+        backgroundColor: "currentColor"
+    },
+    completed: {
+        color: "black",
+        zIndex: 1,
+        fontSize: "25px"
+    }
+});
+
+function QontoStepIcon(props) {
+    const classes = useQontoStepIconStyles();
+    const { active, completed } = props;
+
+    return (
+        <div
+            className={clsx(classes.root, {
+                [classes.active]: active
+            })}
+        >
+            {completed ? (
+                <Check className={classes.completed} />
+            ) : (
+                <div className={classes.circle} />
+            )}
+        </div>
+    );
+}
+
+QontoStepIcon.propTypes = {
+    /**
+     * Whether this step is active.
+     */
+    active: PropTypes.bool,
+    /**
+     * Mark the step as completed. Is passed to child components.
+     */
+    completed: PropTypes.bool
+};
+
 const ColorlibConnector = withStyles({
     alternativeLabel: {
-        top: 22,
-        position:"absolute",
+        top: 22
     },
     active: {
         "& $line": {
             backgroundImage:
-                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
-
+                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
         }
     },
     completed: {
         "& $line": {
             backgroundImage:
-                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
-
+                "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
         }
     },
     line: {
@@ -39,7 +113,7 @@ const ColorlibConnector = withStyles({
         border: 0,
         backgroundColor: "#eaeaf0",
         borderRadius: 1
-    },
+    }
 })(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
@@ -65,46 +139,12 @@ const useColorlibStepIconStyles = makeStyles({
     }
 });
 
-function ColorlibStepIcon(props) {
-    const classes = useColorlibStepIconStyles();
-    const { active, completed } = props;
 
-    const icons = {
-        1: <SettingsIcon />,
-        2: <SettingsIcon />,
-        3: <VideoLabelIcon />
-    };
 
-    return (
-        <div
-            className={clsx(classes.root, {
-                [classes.active]: active,
-                [classes.completed]: completed
-            })}
-        >
-            {icons[String(props.icon)]}
-        </div>
-    );
-}
-
-ColorlibStepIcon.propTypes = {
-    /**
-     * Whether this step is active.
-     */
-    active: PropTypes.bool,
-    /**
-     * Mark the step as completed. Is passed to child components.
-     */
-    completed: PropTypes.bool,
-    /**
-     * The label displayed in the step icon.
-     */
-    icon: PropTypes.node
-};
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: "100%",
+        width: "100%"
     },
     button: {
         marginRight: theme.spacing(1)
@@ -116,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-    return ["Select campaign settings", "Create an ad group", "Create an ad"];
+    return ["1 Этап", "2 Этап", "3 Этап"];
 }
 
 function getStepContent(step) {
@@ -124,7 +164,7 @@ function getStepContent(step) {
         case 0:
             return "Select campaign settings...";
         case 1:
-            return <CheckBoxes/>;
+            return "What is an ad group anyways?";
         case 2:
             return "This is the bit I really care about!";
         default:
@@ -132,9 +172,9 @@ function getStepContent(step) {
     }
 }
 
-export default function CustomizedSteppers() {
+export default function Steppers() {
     const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = React.useState(1);
     const steps = getSteps();
 
     const handleNext = () => {
@@ -154,15 +194,14 @@ export default function CustomizedSteppers() {
             <Stepper
                 alternativeLabel
                 activeStep={activeStep}
-                connector={<ColorlibConnector />}
+                connector={<QontoConnector />}
             >
                 {steps.map((label) => (
                     <Step key={label}>
-                        <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+                        <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
                     </Step>
                 ))}
             </Stepper>
-
         </div>
     );
 }
